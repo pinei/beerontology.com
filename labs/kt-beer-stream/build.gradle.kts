@@ -5,11 +5,13 @@ plugins {
 	id("io.spring.dependency-management") version "1.0.7.RELEASE"
 	kotlin("jvm") version "1.2.71"
 	kotlin("plugin.spring") version "1.2.71"
+	kotlin("plugin.noarg") version "1.2.71"
 }
 
 group = "com.beerontology"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_1_8
+
 
 repositories {
 	mavenCentral()
@@ -20,8 +22,8 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-	implementation("org.springframework.boot:spring-boot-starter-web");
-	implementation("org.hsqldb:hsqldb");
+	implementation("org.springframework.boot:spring-boot-starter-web")
+	runtime("org.hsqldb:hsqldb")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
