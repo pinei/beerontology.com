@@ -118,3 +118,4 @@ Each module should go in its own file, with an extension of .ex.
 ## References
 
 - [Introducing Elixir, 2nd Edition](http://shop.oreilly.com/product/0636920050612.do)
+- [Elixir Style Guide](https://github.com/christopheradams/elixir_style_guide)
