@@ -2,9 +2,11 @@
 
 Some code to taste Elixir
 
-## First Steps
+## Step by Step
 
 1. Create and test an app
+
+The command `mix` will invoke Elixir's Mix tool, wich provide tasks for creating, managing dependencies, compiling and testing Elixir projects.
 
 ```
 $ mix new elixir_beer_taste
@@ -28,19 +30,42 @@ Finished in 0.04 seconds
 $ iex -S mix
 ```
 
-3. Call a function
+Use Ctrl+C to break and access a menu with following options:
+
+- (a)bort
+- (c)ontinue
+- (p)roc info
+- (i)nfo
+- (l)oaded
+- (v)ersion
+- (k)ill
+- (D)b-tables
+- (d)istribution
+
+3. Call a module function
 
 ```
 iex(1)> ElixirBeerTaste.hello()
 :world
 ```
 
-4. Call for help
+4. From module to free-floating function
+
+To reference a function, you need its function name and its arity. Arity is the number of arguments a function takes.
+
+```
+iex(1)> hello = &ElixirBeerTaste.say_hello/1
+&ElixirBeerTaste.hello/1
+iex(1)> hello.("John")
+Hello John
+```
+
+5. Call for help
 
 ```
 iex(2)> h()
 
-                                  IEx.Helpers                                   
+                                  IEx.Helpers
 
 Welcome to Interactive Elixir. You are currently seeing the documentation for
 the module IEx.Helpers which provides many helpers to make Elixir's shell more
@@ -48,7 +73,7 @@ joyful to work with.
 ...
 ```
 
-5. Introspect a value
+6. Introspect a value
 
 ```
 iex(3)> i(ElixirBeerTaste)
@@ -61,7 +86,7 @@ Module bytecode
 ...
 ```
 
-6. Declare a function
+7. Declare a free-floating function
 
 ```
 iex(4)> ml_to_oz = fn (ml) -> ml / 29.574 end
@@ -75,7 +100,7 @@ You need the period between the variable name and the argument when you call a f
 
 You won’t need it for functions declared in modules
 
-7. Search packages
+8. Search packages
 
 ```
 $ mix hex.search decimal
@@ -83,7 +108,7 @@ Package   Description                               Version  URL
 decimal   Arbitrary precision decimal arithmetic.   1.8.0    https://hex.pm/packages/decimal
 ```
 
-8. Add a dependency in mix.exs
+9. Add a dependency in mix.exs
 
 ```
   defp deps do
@@ -93,7 +118,7 @@ decimal   Arbitrary precision decimal arithmetic.   1.8.0    https://hex.pm/pack
   end
 ```
 
-9. Install dependencies
+10. Install dependencies
 
 ```
 $ mix deps.get
@@ -104,15 +129,26 @@ New:
 * Getting decimal (Hex package)
 ```
 
-10. Build and test a module using the dependency
+11. Build a module using the dependency
 
 - `./lib/beer/beer_units.ex`
 - `./test/beer/beer_units_test.exs`
 
+12. Run tests
+
+The test files are in the `test` folder.
+
+```
+$ mix test
+.....
+
+Finished in 0.05 seconds
+2 doctests, 3 tests, 0 failures
+```
 
 ## Modules
 
-Each module should go in its own file, with an extension of .ex.
+Each module should go in its own file, with an `.ex` extension .
 
 
 ## References

@@ -5,4 +5,8 @@ defmodule ElixirBeerTasteTest do
   test "greets the world" do
     assert ElixirBeerTaste.hello() == :world
   end
+
+  test "greets someone" do
+    assert ElixirBeerTaste.say_hello("John") == "Hello John"
+  end
 end

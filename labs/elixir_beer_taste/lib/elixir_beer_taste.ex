@@ -14,4 +14,17 @@ defmodule ElixirBeerTaste do
   def hello do
     :world
   end
+
+  @doc """
+  Say Hello to someone
+
+  ## Examples
+
+      iex> ElixirBeerTaste.say_hello("John")
+      "Hello John"
+  """
+  def say_hello(name) do
+    "Hello #{name}"
+  end
+
 end
