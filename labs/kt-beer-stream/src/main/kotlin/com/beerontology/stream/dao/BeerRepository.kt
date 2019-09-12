@@ -9,10 +9,18 @@ import org.springframework.data.jpa.repository.QueryHints
 import org.springframework.stereotype.Repository
 import javax.persistence.QueryHint
 
+/*
+ * JPQL sample:
+ *   "select b from Beer b"
+ *
+ * Native Query sample:
+ *   "select * from Beer b"
+ */
 @Repository
 interface BeerRepository : JpaRepository<Beer, Int> {
 
     @QueryHints(value = QueryHint(name = HINT_FETCH_SIZE, value = "1"))
-    @Query(value = "select * from Beer", nativeQuery = true)
-    fun extractAll(): Stream<Beer>
+    @Query(value = "select * from Beer b ", nativeQuery = true)
+    fun reportAll(): Stream<Beer>
+
 }
