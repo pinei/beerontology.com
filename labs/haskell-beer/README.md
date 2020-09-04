@@ -75,3 +75,45 @@ Loaded GHCi configuration from /private/var/folders/jd/th6tj68x6gvc3ygvb_xdk7440
 Prelude>
 ```
 
+## Criando o projeto
+
+```
+$ stack new haskell-kitchen
+Downloading template "new-template" to create project "haskell-kitchen" in haskell-kitchen/ ...
+
+The following parameters were needed by the template but not provided: author-name
+You can provide them in /Users/pinei/.stack/config.yaml, like this:
+templates:
+  params:
+    author-name: value
+Or you can pass each one as parameters like this:
+stack new haskell-kitchen new-template -p "author-name:value"
+
+
+The following parameters were needed by the template but not provided: author-email, author-name, category, copyright, github-username
+You can provide them in /Users/pinei/.stack/config.yaml, like this:
+templates:
+  params:
+    author-email: value
+    author-name: value
+    category: value
+    copyright: value
+    github-username: value
+Or you can pass each one as parameters like this:
+stack new haskell-kitchen new-template -p "author-email:value" -p "author-name:value" -p "category:value" -p "copyright:value" -p "github-username:value"
+
+Looking for .cabal or package.yaml files to use to init the project.
+Using cabal packages:
+- haskell-kitchen/
+
+Selecting the best among 18 snapshots...
+
+* Matches lts-16.10
+
+Selected resolver: lts-16.10
+Initialising configuration using resolver: lts-16.10
+Total number of user packages considered: 1
+Writing configuration to file: haskell-kitchen/stack.yaml
+All done.
+/Users/pinei/.stack/templates/new-template.hsfiles:    3.72 KiB downloaded...
+```
